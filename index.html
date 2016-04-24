@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <script type="text/javascript">
+        function GetDays(){
+                var dropdt = new Date(document.getElementById("drop_date").value);
+                var pickdt = new Date(document.getElementById("pick_date").value);
+                return parseInt((dropdt - pickdt) / (24 * 3600 * 1000));
+        }
+
+        function cal(){
+        if(document.getElementById("drop_date")){
+            document.getElementById("days").value=GetDays();
+        }  
+    }
+
+    </script>
+</head>
+<body>
+
+    <span id="pickup_date">Check In : <input type="date" class="textbox" id="pick_date" name="checkin" onchange="cal()"</span>
+
+    <span id="dropoff_date">Check Out : <input type="date" class="textbox" id="drop_date" name="checkout" onchange="cal()"/></span>
+
+    <span id="numdays"><input type="text" class="textbox" id="days" name="numdays" size="5"/></span>
+</body>
